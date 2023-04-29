@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: pod
+metadata:
+  name: excercise4
+
+spec:
+  containers:
+    - name: excercise4
+      image: nginix:1.23
+      ports:
+        - containerPort: 80
+    - name: httpd
+      image: httpd
+      ports:
+        - containerport: 80

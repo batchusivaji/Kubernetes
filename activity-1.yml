@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: pod
+metadata:
+  name: spring-pet-clinic
+
+spec:
+  containers:
+    - name: spring-pet-clinic
+      image: spc:2.2
+      ports:
+        - containerPort: 8080
+    - name: nopcommerse
+      image: nop:3.4
+      ports:
+        - containerport: 80
