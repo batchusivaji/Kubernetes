@@ -13,4 +13,4 @@ spec:
     - name: nopcommerse
       image: nop:3.4
       ports:
-        - containerport: 80
+        - containerPort: 5000
