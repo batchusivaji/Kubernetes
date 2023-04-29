@@ -8,9 +8,9 @@ spec:
     - name: nginx
       image: nginx
       ports:
-        - containerport:80
+        - containerport: 80
     - name: alpine
       image: alpine
       args:
         - sleep
-        - 1d
+          1d
