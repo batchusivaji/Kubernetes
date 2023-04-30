@@ -10,7 +10,7 @@ spec:
       image: batchusivaji/raj:1.0
       ports:
         - containerPort: 8080
-    - name: nopcommerse
+    - name: nop
       image: batchusivaji/rajshekar:1.0
       ports:
         - containerPort: 5000
