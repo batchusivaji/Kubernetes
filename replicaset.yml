@@ -4,7 +4,7 @@ kind: ReplicaSet
 metadata:
   name: alpinepod
 spec:
-  minReadySeconds: 10s
+  minReadySeconds: 5s
   replicas: 5
   selector:
     matchLabels: alpine
