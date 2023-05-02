@@ -1,0 +1,14 @@
+---
+apiVersion:	v1
+kind: Pod	
+metadata:
+  name: restartalways
+spec:
+  restartPolicy: Never
+    containers:
+      - name: game of life
+        image: batchusivaji/kishore:1.1
+        ports: 9090
+        args:
+          - sleep
+          - 1d

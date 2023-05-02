@@ -1,0 +1,23 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: crontab
+spec:
+  schedule: 1 * * * *
+  jobTemplate:
+    metadata:
+      name: crontabjob
+    spec:
+      template:
+        metadata:
+          name: data-pod
+        spec:
+          containers:
+            - name: spc
+              image: batchusivaji/raj:1.0 
+              args:
+                - sleep
+                - 5s
+
+  
