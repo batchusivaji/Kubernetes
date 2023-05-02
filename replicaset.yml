@@ -2,23 +2,48 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: alpinepod
+  name: alpine
+  labels:
+    app: alpine
 spec:
-  minReadySeconds: 5s
-  replicas: 5
+  minReadySeconds: 5
+  replicas: 2
   selector:
-    matchLabels: alpine
-    matchExpressions:
-      - operator: NotIn
-    template:
-      metadata:
-        labels: alpine
-        name: alpine
-      spec:
-        containers:
-          - name: alpine
-            image: alpine:3.17
-            ports:
-              - containerPort: 9080
+    matchLabels: 
+      app: 'alpine'
+  template:
+    metadata:
+      app: alpine
+    spec:
+      containers:
+        - name: alpine
+          image: alpine:3.17
+          args: 
+            - sleep
+            - 10s
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels: 
+    app: alpine
+  name: alpine
+spec:
+  minReadySeconds: 2
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: 'alpine'
+  template: 
+    metadata:
+      labels: 
+        app: alpine
+    spec:
+      containers:
+        - name: alpine
+          image: alpine
+          args:
+            - sleep 
+            - 10s
 
   
