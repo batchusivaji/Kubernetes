@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: alpinepod
-  labels: alpine
 spec:
   minReadySeconds: 10sec
   replicas: 5
