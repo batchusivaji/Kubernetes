@@ -6,7 +6,7 @@ metadata:
 spec:
   restartPolicy: Always
   containers:
-    - name: game of life
+    - name: jenkins
       image: jenkins/jenkins:jdk11-hotspot-windowsservercore-2019
       args:
         - sleep
