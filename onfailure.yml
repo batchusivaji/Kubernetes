@@ -1,7 +1,7 @@
 apiVersion:	v1
 kind: Pod
 metadata:
-  name: onfailure
+  name: OnFailure
 spec:
   restartPolicy: OnFailure
   containers:
