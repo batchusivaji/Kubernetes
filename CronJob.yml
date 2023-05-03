@@ -3,21 +3,31 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: crontab
+  labels:
+    app: lebel-nginix
 spec:
   schedule: 1 * * * *
   jobTemplate:
     metadata:
       name: crontabjob
+      labels:
+        app: label-nginix
     spec:
+      selector:
+        matchLabels:
+          app: label-nginix
       template:
         metadata:
+          labels:
+            app: label-nginix
           name: data-pod
         spec:
           containers:
             - name: spc
-              image: batchusivaji/raj:1.0 
+              image: redis:7.2 
               args:
                 - sleep
-                - 5s
+              command:
+                - 10s
 
   
