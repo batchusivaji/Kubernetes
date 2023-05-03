@@ -20,6 +20,5 @@ spec:
   containers:
     - name: gameoflife
       image: batchusivaji/kishore:1.1
-      args:
-        - sleep
-        - 10s
+      ports:
+        - containerPort: 9090
