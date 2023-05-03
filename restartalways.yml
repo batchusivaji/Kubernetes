@@ -5,9 +5,9 @@ metadata:
   name: restartalways
 spec:
   restartPolicy: Always
-    containers:
-      - name: game of life
-        image: jenkins/jenkins:jdk11-hotspot-windowsservercore-2019
-        args:
-          - sleep
-          - 10s
+  containers:
+    - name: game of life
+      image: jenkins/jenkins:jdk11-hotspot-windowsservercore-2019
+      args:
+        - sleep
+        - 10s
