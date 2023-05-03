@@ -1,11 +1,11 @@
 apiVersion:	v1
 kind: Pod
 metadata:
-  name: OnFailure
+  name: onfailure
 spec:
   restartPolicy: OnFailure
   containers:
-    - name: game of life
+    - name: gameoflife
       image: batchusivaji/kishore:1.1
       args:
         - sleep
@@ -14,11 +14,11 @@ spec:
 apiVersion:	v1
 kind: Pod
 metadata:
-  name: OnFailure
+  name: onfailure
 spec:
   restartPolicy: OnFailure
   containers:
-    - name: game of life
+    - name: gameoflife
       image: batchusivaji/kishore:1.1
       args:
         - sleep
