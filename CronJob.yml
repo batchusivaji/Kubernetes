@@ -22,6 +22,7 @@ spec:
             app: label-nginix
           name: cronob-labels
         spec:
+          restartPolicy: OnFailure
           containers:
             - name: spc
               image: redis:7.2 
