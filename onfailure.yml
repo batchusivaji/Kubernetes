@@ -7,8 +7,6 @@ spec:
   containers:
     - name: game of life
       image: batchusivaji/kishore:1.1
-      ports:
-        - containerPort: 9090
       args:
         - sleep
         - 10mb
@@ -22,8 +20,6 @@ spec:
   containers:
     - name: game of life
       image: batchusivaji/kishore:1.1
-      ports:
-        - containerPort: 9090
       args:
         - sleep
         - 10s
