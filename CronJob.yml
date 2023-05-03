@@ -2,14 +2,14 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: CronJob
+  name: cronob-labels
   labels:
     app: lebel-nginix
 spec:
   schedule: 1 * * * *
   jobTemplate:
     metadata:
-      name: CronJob
+      name: cronob-labels
       labels:
         app: label-nginix
     spec:
@@ -20,7 +20,7 @@ spec:
         metadata:
           labels:
             app: label-nginix
-          name: CronJob
+          name: cronob-labels
         spec:
           containers:
             - name: spc
