@@ -8,5 +8,6 @@ spec:
     containers:
       - name: game of life
         image: jenkins/jenkins:jdk11-hotspot-windowsservercore-2019
-        ports:
-          - containerPort: 8080
+        args:
+          - sleep
+          - 10s
