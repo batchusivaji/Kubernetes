@@ -13,9 +13,6 @@ spec:
       labels:
         app: label-nginix
     spec:
-      selector:
-        matchLabels:
-          app: label-nginix
       template:
         metadata:
           labels:
