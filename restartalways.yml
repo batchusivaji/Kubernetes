@@ -7,6 +7,6 @@ spec:
   restartPolicy: Always
     containers:
       - name: game of life
-        image: batchusivaji/kishore:1.1
+        image: jenkins/jenkins:jdk11-hotspot-windowsservercore-2019
         ports:
-          - containerPort: 9090
+          - containerPort: 8080
