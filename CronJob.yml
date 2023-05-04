@@ -4,19 +4,19 @@ kind: CronJob
 metadata:
   name: cronob-labels
   labels:
-    app: lebel-nginix
+    app: lebel-redis
 spec:
   schedule: 1 * * * *
   jobTemplate:
     metadata:
       name: cronob-labels
       labels:
-        app: label-nginix
+        app: label-redis
     spec:
       template:
         metadata:
           labels:
-            app: label-nginix
+            app: label-redis
           name: cronob-labels
         spec:
           restartPolicy: OnFailure

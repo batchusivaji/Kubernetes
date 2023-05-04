@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: replication-controller
+  labels:
+    app: redis
+spec:
+  minReadySeconds: 10
+  replicas: 5
+  template:
+    name: app-replication-controller
+    metadata:
+      labels:
+        app: redis
+        version: 7.2
+    spec:
+      activeDeadlineSeconds: 5
+      containers:
+        - name: replication-controller
+          image: redis:7.2
+          args:
+            - sleep
+          command:
+            - 15s
