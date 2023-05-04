@@ -9,7 +9,7 @@ spec:
   minReadySeconds: 10
   replicas: 5
   template:
-    name: app-replication
+    name: replication
     metadata:
       labels:
         app: redis
