@@ -14,7 +14,7 @@ spec:
       labels:
         app: redis
     spec:
-      activeDeadlineSeconds: 5
+      activeDeadlineSeconds: 2
       containers:
         - name: replication
           image: redis:7.2
