@@ -20,4 +20,4 @@ spec:
         - image: redis
           args:
             - sleep
-            - 1s
+              10s
