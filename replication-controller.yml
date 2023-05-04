@@ -17,7 +17,7 @@ spec:
     spec:
       activeDeadlineSeconds: 2
       containers:
-        - name: replication
+        - name: redis
         - image: redis:7.2
           args:
             - sleep
