@@ -5,9 +5,12 @@ metadata:
   name: replication
   labels:
     app: redis
+    version: 7.2
 spec:
   minReadySeconds: 5
   replicas: 5
+  selector:
+    app: replication
   template:
     name: app
     metadata:
@@ -17,7 +20,7 @@ spec:
       activeDeadlineSeconds: 2
       containers:
         - name: replication
-          image: redis:7.2
+        - image: redis:7.2
           args:
             - sleep
           command:
