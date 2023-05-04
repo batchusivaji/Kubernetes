@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: replicationcontroller
+  name: replication
   labels:
     app: redis
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       activeDeadlineSeconds: 5
       containers:
-        - name: replicationcontroller
+        - name: replication
           image: redis:7.2
           args:
             - sleep
