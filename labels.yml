@@ -1,2 +1,16 @@
 ---
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: labels
+  labels:
+    app: redis
+    version: 7.2
+spec:
+  minReadySeconds: 2
+  replicas: 6
+  selector:
+    matchExpressions:
+      - key:
+        operator:
+        values:
