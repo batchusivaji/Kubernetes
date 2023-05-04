@@ -5,12 +5,11 @@ metadata:
   name: replication
   labels:
     app: redis
-    version: 7.2
 spec:
   minReadySeconds: 5
   replicas: 5
   selector:
-    app: redis
+    app: redis                
   template:
     name: app
     metadata:
