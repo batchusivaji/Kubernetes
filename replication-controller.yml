@@ -15,9 +15,10 @@ spec:
       labels:
         app: redis
     spec:
+      activeDeadlineSeconds: 2
       containers:
         - name: redis
-          image: redis
+        - image: redis
           args:
             - sleep
             - 15s
