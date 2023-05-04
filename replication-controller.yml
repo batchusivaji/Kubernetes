@@ -6,8 +6,8 @@ metadata:
   labels:
     app: redis
 spec:
-  minReadySeconds: 5
-  replicas: 5
+  minReadySeconds: 2
+  replicas: 2
   selector:
     app: redis                
   template:
@@ -21,4 +21,4 @@ spec:
         - image: redis
           args:
             - sleep
-            - 15s
+            - 1s
