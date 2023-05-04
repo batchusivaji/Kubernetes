@@ -11,7 +11,6 @@ spec:
   selector:
     app: redis                
   template:
-    name: redis
     metadata:
       labels:
         app: redis
