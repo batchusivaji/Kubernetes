@@ -10,14 +10,14 @@ spec:
   minReadySeconds: 5
   replicas: 5
   selector:
-    app: replication
+    app: redis
   template:
     name: app
     metadata:
       labels:
         app: redis
     spec:
-      
+      activeDeadlineSeconds: 2
       containers:
         - name: replication
         - image: redis:7.2
