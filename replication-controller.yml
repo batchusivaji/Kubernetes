@@ -13,7 +13,6 @@ spec:
     metadata:
       labels:
         app: redis
-        version: 7.2
     spec:
       activeDeadlineSeconds: 5
       containers:
