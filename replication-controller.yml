@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
         - name: redis
-        - image: redis
+          image: redis
           args:
             - sleep
-          command:
             - 15s
