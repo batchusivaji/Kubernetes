@@ -12,7 +12,16 @@ spec:
     matchExpressions:
       - key: developer
         operator: In
-          - values:
-
-
+        values:
+          - web
+          - dev
+      - key: tester
+        operator: NotIn
+        values:
+          - qt
+          - ihub
   template:
+    metadata:
+      name: qualityThought
+      labels:
+        developer: 
