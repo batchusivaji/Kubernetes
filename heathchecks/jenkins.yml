@@ -1,0 +1,18 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: jenkis-sever-healthchecks
+  labels:
+    app: server
+spec:
+  minReadySeconds: 1
+  replicas: 2
+  selector:
+    matchExpressions:
+      - key: developer
+        operator: In
+          - values:
+
+
+  template:
