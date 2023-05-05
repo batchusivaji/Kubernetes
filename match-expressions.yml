@@ -14,18 +14,18 @@ spec:
         operator: In
         values:
           - apache2
-            nginix
+          - nginix
       - key: dev
         operator: NotIn
         values:
           - linux
-            unix
+          - unix
   template:
     metadata:
       name: match-expressions
       labels:
         app: apache2 # this spec is used in selector
-        dev: nginix
+        dev: developer
     spec: 
       activeDeadlineSeconds: 10
       containers:
