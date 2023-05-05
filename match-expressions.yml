@@ -2,7 +2,7 @@
 apiVersion:	v1
 kind: ReplicaSet
 metadata:
-  name: match-expressions
+  name: setbased
   labels:
     app: redis
 spec:
