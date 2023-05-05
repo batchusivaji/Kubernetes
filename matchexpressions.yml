@@ -1,5 +1,37 @@
 ---
-apiVersion:
-kind:
+apiVersion:	v1
+kind: ReplicaSet
 metadata:
+  name: match-expressions
+  labels:
+    app: jenkins
 spec:
+  minReadySeconds: 2
+  replicas: 2
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - apache2
+            nginix
+      - key: dev
+        operator: NotIn
+        values:
+          - linux
+            unix
+  template:
+    metadata:
+      name: match-expressions-k8s
+      labels:
+        app: redis
+        version: 7.2
+    spec: 
+      activeDeadlineSeconds: 10
+      containers:
+        - name: redis
+          image: redis:7.2
+          args:
+            - sleep
+          command:
+            - 10s
