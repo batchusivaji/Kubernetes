@@ -3,12 +3,12 @@ apiVersion:	apps/v1
 kind: ReplicaSet
 metadata:
   name: setbased
-  labels:
+  labels: # label is not reqired
     app: redis
 spec:
   minReadySeconds: 2
   replicas: 2
-  selector:
+  selector: # to set based selector , can be used to select multiple options in single selection
     matchExpressions:
       - key: app
         operator: In
@@ -24,7 +24,7 @@ spec:
     metadata:
       name: match-expressions
       labels:
-        app: apache2
+        app: apache2 # this spec is used in selector
         dev: nginix
     spec: 
       activeDeadlineSeconds: 10
