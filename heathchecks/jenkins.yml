@@ -24,4 +24,4 @@ spec:
     metadata:
       name: qualityThought
       labels:
-        developer: 
+        developer: qt 
