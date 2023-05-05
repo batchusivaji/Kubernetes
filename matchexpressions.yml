@@ -4,7 +4,7 @@ kind: ReplicaSet
 metadata:
   name: match-expressions
   labels:
-    app: jenkins
+    app: redis
 spec:
   minReadySeconds: 2
   replicas: 2
