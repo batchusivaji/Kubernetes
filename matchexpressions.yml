@@ -22,7 +22,7 @@ spec:
             unix
   template:
     metadata:
-      name: match-expressions-k8s
+      name: match-expressions
       labels:
         app: apache2
         dev: nginix
