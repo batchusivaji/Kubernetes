@@ -27,7 +27,6 @@ spec:
         app: apache2 # this spec is used in selector
         dev: developer
     spec: 
-      activeDeadlineSeconds: 10
       containers:
         - name: redis
           image: redis:7.2
