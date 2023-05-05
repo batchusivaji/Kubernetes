@@ -24,8 +24,8 @@ spec:
     metadata:
       name: match-expressions-k8s
       labels:
-        app: redis
-        version: 7.2
+        app: apache2
+        dev: nginix
     spec: 
       activeDeadlineSeconds: 10
       containers:
