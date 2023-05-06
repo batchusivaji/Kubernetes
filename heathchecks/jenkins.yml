@@ -25,3 +25,5 @@ spec:
       name: qualityThought
       labels:
         developer: qt 
+    spec:
+      name
