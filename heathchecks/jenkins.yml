@@ -24,6 +24,21 @@ spec:
     metadata:
       name: qualityThought
       labels:
-        developer: qt 
+        developer: dev
+        tester: deploy 
     spec:
-      name
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:2.387.3-lts
+          ports:
+            - containerPort: 8080
+              livenessProbe:
+                failureThreshold: 2
+                initialDelaySeconds: 1
+                periodSeconds: 10
+                successThreshold: 1
+                timeoutSeconds: 1
+                exec:
+                  command:
+                    - sleep
+                    - 5s
