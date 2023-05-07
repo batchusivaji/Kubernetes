@@ -1,5 +1,11 @@
 ---
-apiVersion: 
-kind:
+apiVersion: v1 
+kind: ConfigMap
+data: 
+  key1: value1
+  key2: value2
 metadata:
-spec: 
+  name: configmap
+  labels:
+    run: service
+  managedFields:
