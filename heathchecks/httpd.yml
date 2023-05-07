@@ -53,7 +53,7 @@ spec:
           image: httpd:2.4.57
           ports: 
             - containerPort: 80
-          protocol: TCP
+              protocol: TCP
       readinessProbe:
         failureThreshold: 5
         initialDelaySeconds: 2
