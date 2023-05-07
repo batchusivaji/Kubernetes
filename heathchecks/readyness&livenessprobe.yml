@@ -41,7 +41,7 @@ spec:
                 exec:
                   command:
                     - sleep
-                    - 10mb
+                    - 10s
               livenessProbe:
                 failureThreshold: 2
                 initialDelaySeconds: 1
