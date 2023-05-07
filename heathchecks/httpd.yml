@@ -54,19 +54,19 @@ spec:
           ports: 
             - containerPort: 80
               protocol: TCP
-      readinessProbe:
-        failureThreshold: 5
-        initialDelaySeconds: 2
-        periodSeconds: 10
-        successThreshold: 3
-        httpGet:
-          path: /
-          port: 80
-      livenessProbe:
-        failureThreshold: 3
-        initialDelaySeconds: 1
-        periodSeconds: 15
-        successThreshold: 5
-        httpGet:
-          path: /
-          port: 80
+          readinessProbe:
+            failureThreshold: 5
+            initialDelaySeconds: 2
+            periodSeconds: 10
+            successThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 1
+            periodSeconds: 15
+            successThreshold: 5
+            httpGet:
+              path: /
+              port: 80
