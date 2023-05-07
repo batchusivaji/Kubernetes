@@ -6,14 +6,15 @@ metadata:
   labels:
     run: httpd
 spec:
+  selector:
+    run: httpd
+  type: LoadBalancer
   ports:
     - name: httpd
       port: 80
       protocol: TCP
       targetPort: 32000
-  selector:
-    run: httpd
-  type: LoadBalancer
+  
 
 
 ---
