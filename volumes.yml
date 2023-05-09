@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pv
+  labels:
+    run: mysql
+spec:
+  containers:
+    - name: mysql 
+      image: mysql:8
+      ports:
+        - containerPort: 3306
+      volumeMounts:
+        - name: aws-storage
+          mountPath: /var/lib/mysql
+  volumes:
+    - name: aws-storage
+      emptyDir:
+        sizeLimit: 1Gi
