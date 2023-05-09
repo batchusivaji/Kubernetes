@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pv
+  name: pv-dynamic
   labels:
     run: mysql
 spec:
@@ -11,9 +11,9 @@ spec:
       ports:
         - containerPort: 3306
       volumeMounts:
-        - name: aws-storage
+        - name: aws-pv
           mountPath: /var/lib/mysql
   volumes:
-    - name: aws-storage
-      emptyDir:
-        sizeLimit: 1Gi
+    - name: aws-pv
+      persistentVolumeClaim: mysql-pvc
+      
