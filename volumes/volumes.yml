@@ -15,5 +15,6 @@ spec:
           mountPath: /var/lib/mysql
   volumes:
     - name: aws-pv
-      persistentVolumeClaim: mysql-pvc
+      persistentVolumeClaim: 
+        claimName: mysql-pvc
       
