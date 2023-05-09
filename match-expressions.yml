@@ -32,5 +32,4 @@ spec:
           image: redis:7.2
           args:
             - sleep
-          command:
             - 10s
