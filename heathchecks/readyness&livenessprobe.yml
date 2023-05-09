@@ -53,3 +53,20 @@ spec:
               command:
                 - sleep
                 - 5s
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    run: nginx
+spec:
+  ports:
+    - name: nginx
+      port: 80
+      protocol: TCP
+      targetPort: 35000
+  selector:
+    run: nginx
