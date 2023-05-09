@@ -12,4 +12,14 @@ spec:
       port:
         containerPort: 6379
   initContainers:
-    -
+    - name: alpine
+      image: latest
+      args:
+        - sleep
+        - 15s
+      containers:
+        - name: myapp-container
+          image: busybox:1.28
+          commannd:
+            - sleep
+            - 60s
