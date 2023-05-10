@@ -13,7 +13,7 @@ spec:
         - containerPort: 80 
   initContainers:
     - name: alpine
-      image: latest
+      image: alpine:latest
       args:
         - sleep
         - 15s
