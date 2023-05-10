@@ -5,7 +5,7 @@ metadata:
   name: alpine-sv
 spec:
   selector:
-    run: alpine
+    run: alpine-sv
   ports:
     - name: alpine
       port: 80
