@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-file
+  name: deployment
   labels:
     run: server
 spec: 
@@ -34,7 +34,7 @@ spec:
     spec:
       containers: 
         - name: httpd-service
-        - image: httpd:2.4.57
-        - ports:
+          image: httpd:2.4.57
+          ports:
             - containerPort: 80
         
