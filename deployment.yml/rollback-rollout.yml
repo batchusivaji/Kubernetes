@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-file
+  labels:
+    run: server
+spec: 
+  minReadySeconds: 5
+  replicas: 2
+  selector:
+    matchExpressions:
+      - key: qat
+        operator: In
+        values:
+          - test
+          - pause
+
+      - key: dev
+        operator: DoesNotExist
+        values:
+          - deploy
+          - failure
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: pod-creation
+      labels:
+        qat: test
+        dev: env
+    spec:
+      containers: 
+        - name: httpd-service
+        - image: httpd:2.4.57
+        - ports:
+            - containerPort: 80
+        
