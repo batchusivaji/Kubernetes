@@ -28,8 +28,8 @@ spec:
               port: 80
           readinessProbe:
              httpGet:
-             path: /
-             port: 80
+               path: /
+               port: 80
           resources:
             requests:
               memory: "64Mi"
