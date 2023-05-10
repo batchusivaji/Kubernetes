@@ -1,4 +1,44 @@
 ---
+apiVersion: apps/v1
+kind: ReplicaSet 
+metadata:
+  name: nginx-pod
+  labels:
+    run: pod
+spec:
+  minReadySeconds: 2
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: test
+    spec:
+      containers:
+        - name: nginx
+          image: latest
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+          readinessProbe:
+             httpGet:
+             path: /
+             port: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "256m"
+            limits:
+              memory: "256Mi"
+              cpu: "1000m"
+              
+---
 apiVersion: v1
 kind: Service
 metadata:
