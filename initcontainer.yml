@@ -9,7 +9,7 @@ spec:
   containers:
     - name: alpine
       image: latest
-      port:
+      ports:
         - containerPort: 80 
   initContainers:
     - name: alpine
@@ -19,8 +19,8 @@ spec:
         - 15s
     - name: busybox
       image: busybox:1.28
-      command::
-        - 'sh'
+      command:
+        - 'sh' 
         - '-c'
-        - 'sleep'
-        - '60s'
+        - "until nslookup nginx.default.svc.cluster.local; do echo waiting for myservice; sleep 2; done"
+       
