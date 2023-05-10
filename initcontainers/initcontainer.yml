@@ -22,5 +22,5 @@ spec:
       command:
         - 'sh' 
         - '-c'
-        - "until nslookup nginx.default.svc.cluster.local; do echo waiting for myservice; sleep 2; done"
+        - "until nslookup nginx-svf.default.svc.cluster.local; do echo waiting for myservice; sleep 2; done"
        
