@@ -1,0 +1,26 @@
+---
+apiVersion:	v1
+kind: Pod
+metadata:
+  name: initcontainers
+  labels:
+    run: webapp       
+spec:
+  containers:
+    - name: alpine
+      image: latest
+      ports:
+        - containerPort: 80 
+  initContainers:
+    - name: alpine
+      image: latest
+      args:
+        - sleep
+        - 15s
+    - name: busybox
+      image: busybox:1.28
+      command:
+        - 'sh' 
+        - '-c'
+        - "until nslookup nginx.default.svc.cluster.local; do echo waiting for myservice; sleep 2; done"
+       
