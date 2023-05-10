@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: latest
+          image: ngnix:latest
           ports:
             - containerPort: 80
           resources:
