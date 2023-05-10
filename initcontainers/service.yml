@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet 
 metadata:
-  name: nginx-pod
+  name: httpd-service
   labels:
     run: pod
 spec:
@@ -18,8 +18,8 @@ spec:
         app: test
     spec:
       containers:
-        - name: nginx
-          image: nginx:latest
+        - name: helloworld
+          image: httpd:2.4.57
           ports:
             - containerPort: 80
           livenessProbe:
