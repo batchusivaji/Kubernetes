@@ -1,5 +1,32 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 
+  name: mysql
 spec:
+  minReadySeconds: 2
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: dev
+        operator: In
+        values:
+          - test
+          - execute
+      - key: ua
+        operator: NotIn
+        values:
+          - deploy
+          - failure
+  strategy:
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: mysql-pvc
+      labels:
+        dev: test
+        ua: pending
+    spec:
+      containers:
+      volumes:

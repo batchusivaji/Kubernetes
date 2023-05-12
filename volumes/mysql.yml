@@ -17,4 +17,5 @@ spec:
     - name: aws-pv
       persistentVolumeClaim: 
         claimName: mysql-pvc
+  
       
