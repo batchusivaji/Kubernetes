@@ -7,6 +7,6 @@ rules:
   - apiGroups: ["*"]
     resources: [ deployments ]
     verbs: 
-      -  get
+      - get
       - watch
       - creat
