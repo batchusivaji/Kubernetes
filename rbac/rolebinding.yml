@@ -4,10 +4,10 @@ metadata:
   name: qat
   namespace: dev
 roleRef:
-  apiGroup: ["*"]
-  kind: user
-  name: qat
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: pod
 subjects:
-  - apiGroup: ["*"]
-    kind: role
-    name: myaccount
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: qat
