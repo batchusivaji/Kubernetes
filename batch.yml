@@ -2,15 +2,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: tempjob
+  name: job
 spec:
+  backoffLimit: 2
   template:
     metadata:
-      name: hellopod
+      name: alpine
     spec:
+      restartPolicy: Never
       containers:
-        - name: hello
-          image: alpine
-          command: 
-            - sleep
-            - 10s
+        - name: nginx-job
+          image: nginx
+          ports:
+            - containerPort: 80         
