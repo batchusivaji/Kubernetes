@@ -1,13 +1,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleRef
+kind: RoleBinding
 metadata:
   name: qat
-  namespace: dev 
+  namespace: dev
 roleRef:
-  apiGroup: rbac.authorization.k8s.io
+  apiGroup: ["*"]
   kind: user
   name: qat
 subjects:
   - apiGroup: ["*"]
-    kind: ClusterRole
+    kind: role
     name: myaccount

@@ -1,11 +1,11 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata: 
-  name: test-admin
-  namespace: teststing
+  name: qat
+  namespace: dev
 rules:
   - apiGroups: ["*"]
-    resources: [ deployments ]
+    resources: [ pods ]
     verbs: 
       - get
       - watch
