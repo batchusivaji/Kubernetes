@@ -4,10 +4,10 @@ kind: Service
 metadata:
   name: httpd
   labels:
-    run: dev
+    run: test
 spec:
   selector:
-    app: test
+    app: dev
   ports:
     - port: 80
       protocol: TCP
