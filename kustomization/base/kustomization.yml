@@ -3,3 +3,4 @@ resources:
   - deployment.yml
   - horizontal-pod-autoscaling.yml
   - service.yml
+  - namespace.yml

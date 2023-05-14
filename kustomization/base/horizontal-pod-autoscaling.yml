@@ -2,10 +2,11 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: 
+  name: nginx
+  namespace: dev
 spec:
-  maxReplicas: 2
-  minReplicas: 8
+  maxReplicas: 8
+  minReplicas: 2
   scaleTargetRef:
     kind: deployment
     name: dev

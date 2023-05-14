@@ -1,10 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dev
+  name: nginx
+  namespace: dev
 spec:
   minReadySeconds: 4
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       run: deployment
