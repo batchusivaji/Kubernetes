@@ -1,14 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: nginx-deployment
   namespace: dev
+  labels:
+    app: nginx
 spec:
   minReadySeconds: 4
   replicas: 1
   selector:
     matchLabels:
-      run: deployment
+      app: nginx
   strategy:
     rollingUpdate:
       maxSurge: 2
@@ -16,9 +18,9 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      name: qat
+      name: nginx
       labels:
-        run: deployment
+        app: nginx
     spec:
       containers:
         - name: nginx
