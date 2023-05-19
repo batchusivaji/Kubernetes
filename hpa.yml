@@ -1,0 +1,58 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    run: nginx
+spec: 
+  minReadySeconds: 3
+  replicas: 1
+  selector:
+    matchExpressions:
+      - key: qat
+        operator: In
+        values:
+          - test
+          - pause
+
+      - key: dev
+        operator: NotIn
+        values:
+          - deploy
+          - failure
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: pod-creation
+      labels:
+        qat: test
+        dev: env
+    spec:
+      containers: 
+        - name: nginx
+          image: "nginx:1.23.4"
+          ports:
+            - containerPort: 80
+          resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m     
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    run: nginx
+  ports:
+    - name: nginx:1.23.4
+      port: 80
+      protocol: TCP
+      targetPort: 35000
