@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  namespace: dev
+  name: daemonset
+  labels:
+    app: podsmaintance
+spec:
+  minReadySeconds: 2
+  selector:
+    matchLabels: 
+      app: qat
+  template:
+    metadata:
+      labels:
+        app: qat
+    spec:
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:2.405-jdk11 
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            mountPath: /var/jenkins_home

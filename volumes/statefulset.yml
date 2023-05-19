@@ -1,0 +1,67 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefulset
+  labels:
+    run: application
+  namespace: dev
+spec:
+  minReadySeconds: 1
+  replicas: 1
+  selector:
+    matchExpressions:
+      - key: devops
+        operator: NotIn
+        values:
+          - dev
+          - test
+      - key: tool
+        operator: NotIn
+        values:
+          - qat
+          - uae
+  template:
+    metadata:
+      name: nginx
+      labels:
+        devops: qat
+        tool: dev
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:lates
+          ports: 
+            - containerPort: 80
+              name: web
+              protocol: TCP
+          volumeMounts: 
+            - mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+    - metadata: 
+        name: nginx
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: my-storage
+        resources:
+          requests: 
+            storage: 1Gi
+            
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    devops: qat
+    tool: dev  
+spec:
+  ports:
+    - port: 80
+      name: develop
+  selector:
+    devops: qat
+    tool: dev
