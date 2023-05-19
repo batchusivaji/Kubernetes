@@ -34,14 +34,14 @@ spec:
     spec:
       containers: 
         - name: nginx
-          image: "nginx:1.23.4"
+          image: nginx:1.23.4
           ports:
             - containerPort: 80
           resources:
-          limits:
-            cpu: 500m
-          requests:
-            cpu: 200m     
+            limits:
+              cpu: 
+            requests:
+              cpu:      
 
 ---
 apiVersion: v1
@@ -52,7 +52,8 @@ spec:
   selector:
     run: nginx
   ports:
-    - name: nginx:1.23.4
+    - name: nginx
       port: 80
       protocol: TCP
       targetPort: 35000
+  
