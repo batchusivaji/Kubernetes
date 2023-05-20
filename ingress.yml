@@ -1,0 +1,10 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+spec:
+  ingressClassName: ingress-loadbalancer
+  rules:
+    - host: "google.com"
+      http:
+        - paths:
