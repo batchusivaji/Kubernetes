@@ -9,5 +9,5 @@ spec:
   minReplicas: 2
   scaleTargetRef:
     kind: deployment
-    name: dev
+    name: nginx-deployment
   targetCPUUtilizationPercentage: 65
