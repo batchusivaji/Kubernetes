@@ -6,7 +6,7 @@ metadata:
     app: alpine
   name: alpine
 spec:
-  minReadySeconds: 2
+  minReadySeconds: 1
   replicas: 3
   selector: 
     matchLabels: 
